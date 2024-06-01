@@ -29,19 +29,33 @@ We initially visualized the relationship between the target variable, diabetes r
 
 There are 3,143 counties in the US and the raw FEA dataset contains a row for each county. From our dataframe containing the 49 feature variables, we dropped rows with NaN values leaving us with 1790 rows.
 
-For the regression models, we created a new feature for modeling that placed each county into a region of the US, northeast, southeast, midwest, and west. We then separated the data into these regions. 
+For the regression models, we created and included new features that indicate whether a county is located in a specific region of the US.
 
-For the classification model, we defined a new feature named health which is either 0, 1, or 2 depending on whether the diabetes rate is low, medium or high, respectively. This threshold was determined using a violin plot.
+For the classification model, we defined a new variable named health which is either 0, 1, or 2 depending on whether the 2013 diabetes rate is low, medium or high, respectively. This threshold was determined using a violin plot. The health variable was used as the target variable.
 
 
 ## Modeling Approach
+We first began by processing features from the full dataset through Linear Regression, XGBoost, and other classic machine learning algorithms. However, after EDA and Feature Selection was complete, we tested the following models
+
+
+![model](https://github.com/db4014/food-atlas-2024/assets/111996974/e95f2411-06aa-4691-b73e-119993d60673)
 
 
 ## Conclusions and Future Directions
 
+### Regression Models
+
+Random Forest, Gradient boost, XGBoost, and Histogram Gradient Boosting Regression Tree significantly outperformed all the other models. The best regression model was the Gradient boost. The Gradient boost model gave a mean squared error of 1.28.The most important predictive features are the percentage of SNAP participants, SNAP benefits per capita in a county and the region the county belongs to.
+
+### Classification Models
+Gradient boosting, random forest, and XGB classifiers outperformed other models. Random Forest classifier performed the best with an accuracy score of 0.81 and a precision of 84%.
+
+### Future Work
+Future work involves reducing the error and improving the accuracy associated with predicting a county’s diabetes rate from food access data. We could also collect and use more years of diabetes data and try integrating time-series. Finally, we could use latitude and longitude of the counties as one of the features for building the models to provide more localized predictions.
+
+
 
 ## Description of Repository
-
 
 All the notebooks are in the _notebooks_ folder
 
