@@ -35,3 +35,13 @@ For the classification model, we defined a new feature named health which is eit
 
 ## Description of Repository
 
+The repository is very simple: 
+*  All the notebooks are in the _notebooks_ folder
+*  The data is in the _data_ folder
+
+
+A few notebooks of note:
+
+* [notebook_name.ipynb](link) - This is a Jupyter Notebook 
+  
+
