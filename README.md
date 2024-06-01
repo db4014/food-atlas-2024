@@ -5,7 +5,7 @@ We utilize the Food Environment Atlas dataset to predict diabetes rate given var
 # Table of Contents
 1. [Introduction](#Introduction)
 2. [Dataset](#Dataset)
-3. [Exploratory Data Analysis](#Exploratory-Data-Analysis)
+3. [Exploratory Data Analysis and Feature Selection](#Exploratory-Data-Analysis-and-Feature-Selection)
 4. [Modeling Approach](#Modeling-Approach)
 5. [Conclusions and Future Directions](#Conclusions-and-Future-Directions)
 6. [Description of Repository](#Description-of-Repository)
@@ -23,11 +23,13 @@ The dataset also provides diabetes prevalence data for each county in 2008 and 2
 ![newplot-2](https://github.com/db4014/food-atlas-2024/assets/111996974/79c2df69-52ca-46a5-b6b3-acf91bbfd020)
 
 
-## Exploratory Data Analysis
+## Exploratory Data Analysis and Feature Selection
 
-We initially visualized the relationship between the target variable, diabetes rate in 2013, and the other variables in the dataset using 2D scatterplots. This was a cumbersome task as it is challenging working with so many variables. So, for our feature variables, we decided to select columns that are percentages because they are already normalized with respect to county population. This approach also prevented redundant information. Additionally, columns that were from a date after the target variable year (2013) were dropped, apart from poverty rate as there was no similar variable. We then computed the correlation matrix between these variables and dropped pairs where the absolute value of the correlation was above the threshold of 0.9. This left us with 49 feature variables. 
+We initially visualized the relationship between the target variable, diabetes rate in 2013, and the other variables in the dataset using 2D scatterplots. This was a cumbersome task as it is challenging working with so many variables. So, for our feature variables, we decided to select columns that are percentages because they are already normalized with respect to county population. This approach also prevented redundant information. Additionally, columns that were from a date after the target variable year (2013) were dropped, apart from poverty rate as there was no similar variable. We then computed the correlation matrix between the remaining variables and dropped pairs where the absolute value of the correlation was above the threshold of 0.9. Finally, we dropped any remaining features with more than 612 null values. This left us with 49 feature variables. 
 
-There are 3,143 counties in the US and the raw FEA dataset contains a row for each county. We created a new feature for modeling that placed each county into a region of the US, northeast, southeast, midwest, and west. We then separated the data into these regions. 
+There are 3,143 counties in the US and the raw FEA dataset contains a row for each county. From our dataframe containing the 49 feature variables, we dropped rows with NaN values leaving us with 1790 rows.
+
+For the regression models, we created a new feature for modeling that placed each county into a region of the US, northeast, southeast, midwest, and west. We then separated the data into these regions. 
 
 For the classification model, we defined a new feature named health which is either 0, 1, or 2 depending on whether the diabetes rate is low, medium or high, respectively. This threshold was determined using a violin plot.
 
