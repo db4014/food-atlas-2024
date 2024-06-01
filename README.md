@@ -1,6 +1,12 @@
 # Predicting Diabetes with the Food Environment Atlas
 
-<toc>
+# Table of Contents
+1. [Introduction](#Introduction)
+2. [Dataset](#Dataset)
+3. [Exploratory Data Analysis](#Exploratory-Data-Analysis)
+4. [Modeling Approach](#Modeling-Approach)
+5. [Conclusions and Future Directions](#Conclusions-and-Future-Directions)
+6. [Description of Repository](#Description-of-Repository)
 
 ## Introduction
 
@@ -12,4 +18,20 @@ We utilize the Food Environment Atlas (FEA) dataset (https://www.ers.usda.gov/da
 
 The dataset also provides diabetes prevalence data for each county in 2008 and 2013.
 
+## Exploratory Data Analysis
+
+We initially visualized the relationship between the target variable, diabetes rate in 2013, and the other variables in the dataset using 2D scatterplots. This was a cumbersome task as it is challenging working with so many variables. So, for our feature variables, we decided to select columns that are percentages because they are already normalized with respect to county population. This approach also prevented redundant information. Additionally, columns that were from a date after the target variable year were dropped, apart from poverty rate as there was no similar variable. We then computed the correlation matrix between these variables and dropped pairs where the absolute value of the correlation was above the threshold of 0.9. This left us with 59 feature variables.
+
+There are 3,143 counties in the US and the FEA dataset contains a row for each county. We created a new feature for modeling that placed each county into a region of the US, northeast, southeast, midwest, and west. We then separated the data into these regions. 
+
+For the classification model, we defined a new feature named health which is either 0, 1, or 2 depending on whether the diabetes rate is low, medium or high, respectively. This threshold was determined using a violin plot.
+
+
+## Modeling Approach
+
+
+## Conclusions and Future Directions
+
+
+## Description of Repository
 
