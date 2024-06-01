@@ -35,9 +35,14 @@ For the classification model, we defined a new variable named health which is ei
 
 
 ## Modeling Approach
-We first began by processing features from the full dataset through Linear Regression, XGBoost, and other classic machine learning algorithms. However, after EDA and Feature Selection was complete, we tested the following models
+We first began by processing features from the full dataset through Linear Regression, XGBoost, and other classic machine learning algorithms. However, after EDA and Feature Selection was complete, we tested the performance of the following models regression models:
 
+*Linear regression, Support vector regressor, KNeighbors regressor, Random forest regressor, AdaBoost regressor, Gradient boosting regressor, XGBoost regressor, Histogram Gradient Boosting Regression Tree
 
+We also tested the performance of the following classification models:
+*Linear Discriminant Analysis, Logistic Regression, Support Vector Classifier, Quadratic Discriminant Analysis, KNeighbors Classifier
+
+A diagram of our modeling approach is below.
 ![model](https://github.com/db4014/food-atlas-2024/assets/111996974/e95f2411-06aa-4691-b73e-119993d60673)
 
 
