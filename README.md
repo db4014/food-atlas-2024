@@ -1,4 +1,4 @@
-# Predicting Diabetes with the Food Environment Atlas
+# Predicting Diabetes Rates using the Food Environment Atlas
 
 # Table of Contents
 1. [Introduction](#Introduction)
@@ -35,13 +35,11 @@ For the classification model, we defined a new feature named health which is eit
 
 ## Description of Repository
 
-The repository is very simple: 
-*  All the notebooks are in the _notebooks_ folder
-*  The data is in the _data_ folder
 
+All the notebooks are in the _notebooks_ folder
 
-A few notebooks of note:
-
-* [notebook_name.ipynb](link) - This is a Jupyter Notebook 
+* [EDA.ipynb](link) - This is a Jupyter Notebook
+* [Regression with Regions.ipynb](link) - This is a Jupyter Notebook 
+* [Classification.ipynb](link) - This is a Jupyter Notebook 
   
 
