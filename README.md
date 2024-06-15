@@ -66,7 +66,7 @@ Future work involves reducing the error and improving the accuracy associated wi
 All the notebooks are in the _notebooks_ folder
 
 * [EDA 1](https://github.com/db4014/food-atlas-2024/blob/main/notebooks/EDA%201.ipynb) - This is a Jupyter Notebook containing EDA.
-* [EDA 2]() - This is another notebook containing EDA.
+* [EDA 2](https://github.com/db4014/food-atlas-2024/blob/main/notebooks/EDA%202.ipynb) - This is another notebook containing EDA.
 * [Regression with Regions]() - This is a Jupyter Notebook containing the regression models.
 * [Classification](https://github.com/db4014/food-atlas-2024/blob/main/notebooks/Classification.ipynb) - This is a Jupyter Notebook containing the clasification models.
   
